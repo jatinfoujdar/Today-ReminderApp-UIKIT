@@ -15,6 +15,11 @@ class ReminderListViewController: UICollectionViewController {
         
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
+        
+        let cellRegistration = UICollectionView.CellRegistration {
+            (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
+            let reminder = Reminder.sampleData[indexPath.item]
+        }
     }
 
     private func listLayout() -> UICollectionViewCompositionalLayout {
